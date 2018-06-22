@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<?import javafx.scene.control.Button?>
+<GridPane fx:id="mainPane" alignment="TOP_CENTER" gridLinesVisible="true" hgap="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@RCASStyle.css" vgap="15.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rcas.controller.StartWindowViewController">
+	<padding>
+		<Insets bottom="5.0" left="15.0" right="15.0" top="5.0" />
+	</padding>
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+	   <Label text="RCAS" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+	   <Label text="Race Car Analysis Studio" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+	   <Button fx:id="btnNewCar" onAction="#handleNewCarBtn" text="New Car" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+	   <Button fx:id="btnOpenCar" onAction="#handleOpenCarBtn" text="Open" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+	   <Button fx:id="btnRecentCar" onAction="#handleRecentCarBtn" text="Recent" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+   </children>
+</GridPane>
