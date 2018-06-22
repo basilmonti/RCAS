@@ -2,3 +2,10 @@
   -fx-text-fill: blue;
   -fx-font-size: 1.6em;
 }
+
+.button {
+    -fx-background-color:  #1683fb;
+    -fx-text-fill: white;
+    -fx-background-radius: 6;
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );
+}
