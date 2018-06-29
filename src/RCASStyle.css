@@ -3,9 +3,41 @@
   -fx-font-size: 1.6em;
 }
 
-.button {
+.button-start {
+    -fx-pref-height: 48.0;
+    -fx-pref-width: 228.0;
     -fx-background-color:  #1683fb;
     -fx-text-fill: white;
     -fx-background-radius: 6;
     -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );
+}
+
+.button-recent {
+    /*
+    -fx-pref-height: 40.0;
+    -fx-pref-width: 190.0;
+    */
+    -fx-background-color:  #1683fb;
+    -fx-text-fill: white;
+    -fx-background-radius: 6;
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );
+}
+
+.button-tab {
+    /*
+    -fx-pref-height: 40.0;
+    */
+    -fx-background-color:  #1683fb;
+    -fx-text-fill: white;
+    -fx-background-radius: 6;
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );
+}
+
+.textfield-open {
+    /*
+    -fx-pref-height: 40.0;
+    -fx-pref-width: 190.0;
+    */
+    -fx-background-color:  #1683fb;
+    -fx-text-fill: white;
 }

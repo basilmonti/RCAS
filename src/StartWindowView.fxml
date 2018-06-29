@@ -29,31 +29,43 @@
    <children>
 	   <Label alignment="BOTTOM_CENTER" text="RCAS" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="BOTTOM">
          <font>
-            <Font size="46.0" />
-         </font></Label>
-      <Line endX="120.0" startX="-120.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+            <Font name="Hiragino Sans W5" size="55.0" />
+         </font>
+         <padding>
+            <Insets bottom="4.0" />
+         </padding></Label>
+      <Line endX="145.0" startX="-145.0" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1">
          <GridPane.margin>
             <Insets />
          </GridPane.margin>
       </Line>
 	   <Label text="Race Car Analysis Studio" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
          <padding>
-            <Insets bottom="20.0" top="2.0" />
+            <Insets bottom="24.0" top="2.0" />
          </padding>
          <font>
-            <Font size="14.0" />
+            <Font size="17.0" />
          </font></Label>
-	   <Button fx:id="btnNewCar" onAction="#handleNewCarBtn" prefHeight="40.0" prefWidth="190.0" text="New Car" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+	   <Button fx:id="btnNewCar" onAction="#handleNewCarBtn" prefHeight="40.0" prefWidth="190.0" styleClass="button-start" text="New Car" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
          <GridPane.margin>
-            <Insets bottom="10.0" />
-         </GridPane.margin></Button>
-	   <Button fx:id="btnOpenCar" onAction="#handleOpenCarBtn" prefHeight="40.0" prefWidth="190.0" text="Open" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+            <Insets bottom="14.0" />
+         </GridPane.margin>
+         <font>
+            <Font name="Hiragino Sans W7" size="16.0" />
+         </font></Button>
+	   <Button fx:id="btnOpenCar" onAction="#handleOpenCarBtn" prefHeight="40.0" prefWidth="190.0" styleClass="button-start" text="Open" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
          <GridPane.margin>
-            <Insets bottom="10.0" />
-         </GridPane.margin></Button>
-	   <Button fx:id="btnRecentCar" onAction="#handleRecentCarBtn" prefHeight="40.0" prefWidth="190.0" style="-: #1683fb;" text="Recent" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
+            <Insets bottom="14.0" />
+         </GridPane.margin>
+         <font>
+            <Font name="Hiragino Sans W7" size="16.0" />
+         </font></Button>
+	   <Button fx:id="btnRecentCar" onAction="#handleRecentCarBtn" prefHeight="40.0" prefWidth="190.0" style="-: #1683fb;" styleClass="button-start" text="Recent" textFill="WHITE" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" GridPane.valignment="CENTER">
          <GridPane.margin>
-            <Insets bottom="10.0" />
-         </GridPane.margin></Button>
+            <Insets bottom="14.0" />
+         </GridPane.margin>
+         <font>
+            <Font name="Hiragino Sans W7" size="16.0" />
+         </font></Button>
    </children>
 </GridPane>
