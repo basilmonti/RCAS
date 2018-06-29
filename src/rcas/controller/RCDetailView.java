@@ -20,7 +20,22 @@ public class RCDetailView {
 
 	@FXML
 	public void initialize() {
-		//TODO set Title to Carname from JSON Object. Bind it to Name Property.
-		lblRCTitle.setText("Racecar: ");
+
+	}
+
+	public void btnMMMonClick(ActionEvent actionEvent) {
+		//TODO Create SubWindow unmodular with MMMDiagramm
+	}
+
+	public void btnDeleteonClick(ActionEvent actionEvent) {
+		//TODO Delete Car in JSON and go to Main Menu
+	}
+
+	public void btnUndoonClick(ActionEvent actionEvent) {
+		//TODO Reload the controls from JSON Data
+	}
+
+	public void btnSaveonClick(ActionEvent actionEvent) {
+		//TODO Post Data to JSON
 	}
 }
