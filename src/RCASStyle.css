@@ -9,7 +9,7 @@
     -fx-background-color:  #1683fb;
     -fx-text-fill: white;
     -fx-background-radius: 6;
-    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 5,0.5,0,3 );
 }
 
 .button-recent {
@@ -20,7 +20,7 @@
     -fx-background-color:  #1683fb;
     -fx-text-fill: white;
     -fx-background-radius: 6;
-    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 5,0.5,0,3 );
 }
 
 .button-tab {
@@ -30,7 +30,7 @@
     -fx-background-color:  #1683fb;
     -fx-text-fill: white;
     -fx-background-radius: 6;
-    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0,0,1 );
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 5,0.5,0,3 );
 }
 
 .textfield-open {
