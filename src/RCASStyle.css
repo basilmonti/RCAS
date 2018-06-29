@@ -24,13 +24,12 @@
 }
 
 .button-tab {
-    /*
-    -fx-pref-height: 40.0;
-    */
+    -fx-pref-height: 10.0;
     -fx-background-color:  #1683fb;
     -fx-text-fill: white;
     -fx-background-radius: 6;
-    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 5,0.5,0,3 );
+    -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 4,0.5,0,1 );
+    -fx-font-family: 'Hiragino Sans W7';
 }
 
 .textfield-open {
