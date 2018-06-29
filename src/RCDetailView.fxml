@@ -1,56 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.Tab?>
-<?import javafx.scene.control.TextField?>
-<GridPane fx:id="mainPane" alignment="TOP_CENTER" gridLinesVisible="true" hgap="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@RCASStyle.css" vgap="15.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rcas.controller.RCDetailView">
+<TabPane fx:id="tabRCMain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@RCASStyle.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rcas.controller.RCDetailView">
 	<padding>
 		<Insets bottom="5.0" left="15.0" right="15.0" top="5.0" />
 	</padding>
-   <columnConstraints>
-      <ColumnConstraints />
-   </columnConstraints>
-   <rowConstraints>
-      <RowConstraints />
-      <RowConstraints />
-   </rowConstraints>
-   <children>
-       <Label text="" fx:id="lblRCTitle" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-       <TabPane fx:id="tabRCMain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="500.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+
             <Tab text="TOP">
-                <GridPane fx:id="tabGridPaneTOP" alignment="TOP_LEFT">
+                <GridPane fx:id="tabGridPaneTOP" alignment="TOP_LEFT" prefWidth="570.0">
                     <padding>
                         <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
                     </padding>
                     <children>
-                        <Label text="Name: " GridPane.columnIndex="0" GridPane.rowIndex="0"/>
-                        <TextField fx:id="txtName" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                        <Label text="Name: " GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <TextField fx:id="txtName" GridPane.columnIndex="1" GridPane.rowIndex="0" />
 
-                        <Label text="Name: " GridPane.columnIndex="0" GridPane.rowIndex="1"/>
-                        <TextField fx:id="txtName" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                        <Label text="Name: " GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                        <TextField fx:id="txtName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
-                        <Label text="Name: " GridPane.columnIndex="0" GridPane.rowIndex="2"/>
-                        <TextField fx:id="txtName" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                        <Label text="Name: " GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                        <TextField fx:id="txtName" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 
-                        <Label text="Name: " GridPane.columnIndex="0" GridPane.rowIndex="3"/>
-                        <TextField fx:id="txtName" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                        <Label text="Name: " GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                        <TextField fx:id="txtName" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Button fx:id="btnMMM" onAction="#btnMMMonClick" text="Show MMM-Diagramm" GridPane.columnIndex="0" GridPane.rowIndex="8" GridPane.rowSpan="2" />
+                        <Button fx:id="btnDelete" onAction="#btnDeleteonClick" text="Delete" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                        <Button fx:id="btnUndo" onAction="#btnUndoonClick" text="Undo" GridPane.columnIndex="3" GridPane.rowIndex="8" />
+                        <Button fx:id="btnSave" onAction="#btnSaveonClick" text="Save" GridPane.columnIndex="4" GridPane.rowIndex="8" />
                     </children>
+         <columnConstraints>
+            <ColumnConstraints prefWidth="80.0" />
+            <ColumnConstraints />
+             <ColumnConstraints halignment="RIGHT" prefWidth="80.0" />
+             <ColumnConstraints halignment="RIGHT" prefWidth="80.0" />
+            <ColumnConstraints halignment="RIGHT" prefWidth="80.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints prefHeight="300.0" valignment="BOTTOM" />
+         </rowConstraints>
                 </GridPane>
             </Tab>
            <Tab text="SIDE">
-               <GridPane fx:id="tabGridPaneSIDE" alignment="CENTER">
+               <GridPane fx:id="tabGridPaneSIDE" alignment="TOP_LEFT">
+                   <padding>
+                       <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
+                   </padding>
                    <children>
+                       <Label text="Name: " GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                       <TextField fx:id="txtName" GridPane.columnIndex="1" GridPane.rowIndex="0" />
 
+                       <Label text="Name: " GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                       <TextField fx:id="txtName" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                       <Label text="Name: " GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                       <TextField fx:id="txtName" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                       <Label text="Name: " GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                       <TextField fx:id="txtName" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                       <Button fx:id="btnMMM" onAction="#btnMMMonClick" text="Show MMM-Diagramm" GridPane.columnIndex="0" GridPane.rowIndex="4" />
                    </children>
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
                </GridPane>
            </Tab>
-       </TabPane>
-   </children>
-</GridPane>
+</TabPane>
