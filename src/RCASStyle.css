@@ -49,6 +49,7 @@
 .open-label {
     -fx-background-color:  #1683fb;
     -fx-prompt-text-fill: white;
+    -fx-text-fill: white;
     -fx-border-color: gray;
 }
 
