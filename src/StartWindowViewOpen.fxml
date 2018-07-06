@@ -11,7 +11,7 @@
 
 <GridPane fx:id="mainPane" alignment="CENTER" hgap="15.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@RCASStyle.css" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="rcas.controller.StartWindowViewController">
 	<padding>
-		<Insets bottom="80.0" left="15.0" right="15.0" />
+		<Insets bottom="105.0" left="15.0" right="15.0" top="30.0" />
 	</padding>
    <columnConstraints>
       <ColumnConstraints />

@@ -54,7 +54,7 @@
             <Insets right="15.0" />
          </GridPane.margin>
       </ListView>
-      <ScrollBar orientation="VERTICAL" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+      <ScrollBar orientation="VERTICAL" styleClass="increment-button" GridPane.columnIndex="1" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
          <GridPane.margin>
             <Insets right="130.0" />
          </GridPane.margin>

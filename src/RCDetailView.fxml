@@ -36,17 +36,17 @@
                <GridPane.margin>
                   <Insets />
                </GridPane.margin></Label>
-                        <TextField fx:id="txtName" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <TextField fx:id="txtName" alignment="CENTER_RIGHT" promptText="m" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 
                         <Label text="Rear Track: " GridPane.columnIndex="0" GridPane.rowIndex="3" />
-                        <TextField fx:id="txtName" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <TextField fx:id="txtName" alignment="CENTER_RIGHT" promptText="m" GridPane.columnIndex="1" GridPane.rowIndex="3" />
 
                         <Label text="Wheelbase: " GridPane.columnIndex="0" GridPane.rowIndex="4" />
-                        <TextField fx:id="txtName" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                        <TextField fx:id="txtName" alignment="CENTER_RIGHT" promptText="m" GridPane.columnIndex="1" GridPane.rowIndex="4" />
 
-                        <Label text="cogHeight:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
-                        <TextField fx:id="txtName" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <Label text="frontRollDist:" GridPane.rowIndex="6" />
+                        <Label text="CoG Height:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                        <TextField fx:id="txtName" alignment="CENTER_RIGHT" promptText="m" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label text="Front Roll Dist.:" GridPane.rowIndex="6" />
             <TextField GridPane.columnIndex="1" GridPane.rowIndex="6" />
                         <Button fx:id="btnMMM" onAction="#btnMMMonClick" prefHeight="10.0" prefWidth="200.0" styleClass="button-tab" text="Show MMM-Diagramm" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="11" GridPane.rowSpan="2">
                <font>
@@ -105,16 +105,16 @@
                            <GridPane.margin>
                                <Insets />
                            </GridPane.margin></Label>
-                       <TextField fx:id="txtName" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                       <TextField fx:id="txtName" alignment="CENTER_RIGHT" promptText="kg" GridPane.columnIndex="1" GridPane.rowIndex="2" />
 
                        <Label text="Front Right:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-                       <TextField fx:id="txtName" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                       <TextField fx:id="txtName" alignment="CENTER_RIGHT" promptText="kg" GridPane.columnIndex="1" GridPane.rowIndex="3" />
 
                        <Label text="Rear Left:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-                       <TextField fx:id="txtName" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                       <TextField fx:id="txtName" alignment="CENTER_RIGHT" promptText="kg" GridPane.columnIndex="1" GridPane.rowIndex="4" />
 
                        <Label text="Rear Right:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
-                       <TextField fx:id="txtName" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                       <TextField fx:id="txtName" alignment="CENTER_RIGHT" promptText="kg" GridPane.columnIndex="1" GridPane.rowIndex="5" />
                        <Button fx:id="btnMMM" onAction="#btnMMMonClick" prefHeight="10.0" prefWidth="200.0" styleClass="button-tab" text="Show MMM-Diagramm" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="10" GridPane.rowSpan="2">
                            <font>
                                <Font name="Hiragino Sans W7" size="13.0" />
@@ -199,22 +199,22 @@
                         </padding>
                     </Label>
                     <Line endX="145.0" startX="-100.0" GridPane.rowIndex="1" />
-                    <Label text="slipAngleCoefficientC:" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                    <Label text="Slip Angle Coefficient C:" GridPane.columnIndex="0" GridPane.rowIndex="2">
                         <GridPane.margin>
                             <Insets />
                         </GridPane.margin></Label>
-                    <TextField fx:id="txtName" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                    <TextField fx:id="txtName" maxWidth="155.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="2" />
 
-                    <Label text="slipAngleCoefficientB:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-                    <TextField fx:id="txtName" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                    <Label text="Slip Angle Coefficient B:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                    <TextField fx:id="txtName" maxWidth="155.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="3" />
 
-                    <Label text="slipAngleCoefficientE:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-                    <TextField fx:id="txtName" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                    <Label text="Slip Angle Coefficient E:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                    <TextField fx:id="txtName" maxWidth="155.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="4" />
 
-                    <Label text="loadCoefficientKA:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
-                    <TextField fx:id="txtName" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-            <Label text="loadCoefficientKB:" GridPane.rowIndex="6" />
-            <TextField GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                    <Label text="Load Coefficient KA:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                    <TextField fx:id="txtName" maxWidth="155.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="5" />
+            <Label text="Load Coefficient KB:" GridPane.rowIndex="6" />
+            <TextField maxWidth="155.0" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="6" />
                     <Button fx:id="btnMMM" onAction="#btnMMMonClick" prefHeight="10.0" prefWidth="200.0" styleClass="button-tab" text="Show MMM-Diagramm" GridPane.columnIndex="0" GridPane.columnSpan="2" GridPane.rowIndex="11" GridPane.rowSpan="2">
                         <font>
                             <Font name="Hiragino Sans W7" size="13.0" />
@@ -227,8 +227,8 @@
                         </font></Button>
                 </children>
                 <columnConstraints>
-                    <ColumnConstraints prefWidth="145.0" />
-                    <ColumnConstraints prefWidth="150.0" />
+                    <ColumnConstraints prefWidth="160.0" />
+                    <ColumnConstraints prefWidth="135.0" />
                     <ColumnConstraints halignment="RIGHT" prefWidth="85.0" />
                     <ColumnConstraints halignment="CENTER" prefWidth="100.0" />
                     <ColumnConstraints halignment="LEFT" prefWidth="80.0" />

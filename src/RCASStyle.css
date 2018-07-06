@@ -3,6 +3,7 @@
   -fx-font-size: 1.6em;
 }
 
+/* Button Design bei StartWindowView */
 .button-start {
     -fx-pref-height: 48.0;
     -fx-pref-width: 228.0;
@@ -12,6 +13,7 @@
     -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 5,0.5,0,3 );
 }
 
+/* Button Style bei StartWindowViewRecent */
 .button-recent {
     /*
     -fx-pref-height: 40.0;
@@ -23,6 +25,7 @@
     -fx-effect: dropshadow( gaussian , rgba(0,0,0,0.75) , 5,0.5,0,3 );
 }
 
+/* Button Style bei RCDetailView */
 .button-tab {
     -fx-pref-height: 10.0;
     -fx-background-color:  #1683fb;
@@ -32,6 +35,7 @@
     -fx-font-family: 'Hiragino Sans W7';
 }
 
+/* Textfield Style bei StartWindowViewOpen */
 .textfield-open {
     /*
     -fx-pref-height: 40.0;
@@ -41,8 +45,16 @@
     -fx-text-fill: white;
 }
 
+/* Label Style bei StartWindowViewOpen */
 .open-label {
     -fx-background-color:  #1683fb;
     -fx-prompt-text-fill: white;
     -fx-border-color: gray;
 }
+
+
+/* Scroll-Bar Style bei StartWindowViewRecent
+.scroll-bar:vertical .thumb {
+    -fx-background-color:  #1683fb;
+}
+*/
