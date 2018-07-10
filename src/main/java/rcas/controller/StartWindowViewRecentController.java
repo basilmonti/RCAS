@@ -1,4 +1,4 @@
-package rcas.controller;
+package main.java.rcas.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

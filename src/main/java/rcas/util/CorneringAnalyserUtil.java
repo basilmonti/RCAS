@@ -1,10 +1,10 @@
-package rcas.util;
+package main.java.rcas.util;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.chart.XYChart.Data;
 import javafx.scene.chart.XYChart.Series;
-import rcas.model.RaceCar;
+import main.java.rcas.model.RaceCar;
 
 /**
  * Utility Class for the analysis of the cornering capabilities of a RaceCar
@@ -175,7 +175,7 @@ public class CorneringAnalyserUtil {
 
 		/**
 		 * 
-		 * @param beta
+		 * @param delta
 		 *            - the steering angle delta in degrees (°) to be set.
 		 */
 		public void setDelta(Double delta) {

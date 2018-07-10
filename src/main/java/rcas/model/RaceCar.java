@@ -1,4 +1,4 @@
-package rcas.model;
+package main.java.rcas.model;
 
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
