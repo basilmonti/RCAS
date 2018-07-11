@@ -5,15 +5,15 @@ import com.fasterxml.jackson.annotation.*;
 
 public class RC {
     private String name;
-    private long frontTrack;
-    private long rearTrack;
-    private long wheelbase;
-    private long cogHeight;
-    private long frontRollDist;
-    private long cornerWeightFL;
-    private long cornerWeightFR;
-    private long cornerWeightRL;
-    private long cornerWeightRR;
+    private double frontTrack;
+    private double rearTrack;
+    private double wheelbase;
+    private double cogHeight;
+    private double frontRollDist;
+    private double cornerWeightFL;
+    private double cornerWeightFR;
+    private double cornerWeightRL;
+    private double cornerWeightRR;
     private AxleTireModel frontAxleTireModel;
     private AxleTireModel rearAxleTireModel;
 
@@ -23,49 +23,49 @@ public class RC {
     public void setName(String value) { this.name = value; }
 
     @JsonProperty("frontTrack")
-    public long getFrontTrack() { return frontTrack; }
+    public double getFrontTrack() { return frontTrack; }
     @JsonProperty("frontTrack")
-    public void setFrontTrack(long value) { this.frontTrack = value; }
+    public void setFrontTrack(double value) { this.frontTrack = value; }
 
     @JsonProperty("rearTrack")
-    public long getRearTrack() { return rearTrack; }
+    public double getRearTrack() { return rearTrack; }
     @JsonProperty("rearTrack")
-    public void setRearTrack(long value) { this.rearTrack = value; }
+    public void setRearTrack(double value) { this.rearTrack = value; }
 
     @JsonProperty("wheelbase")
-    public long getWheelbase() { return wheelbase; }
+    public double getWheelbase() { return wheelbase; }
     @JsonProperty("wheelbase")
-    public void setWheelbase(long value) { this.wheelbase = value; }
+    public void setWheelbase(double value) { this.wheelbase = value; }
 
     @JsonProperty("cogHeight")
-    public long getCogHeight() { return cogHeight; }
+    public double getCogHeight() { return cogHeight; }
     @JsonProperty("cogHeight")
-    public void setCogHeight(long value) { this.cogHeight = value; }
+    public void setCogHeight(double value) { this.cogHeight = value; }
 
     @JsonProperty("frontRollDist")
-    public long getFrontRollDist() { return frontRollDist; }
+    public double getFrontRollDist() { return frontRollDist; }
     @JsonProperty("frontRollDist")
-    public void setFrontRollDist(long value) { this.frontRollDist = value; }
+    public void setFrontRollDist(double value) { this.frontRollDist = value; }
 
     @JsonProperty("cornerWeightFL")
-    public long getCornerWeightFL() { return cornerWeightFL; }
+    public double getCornerWeightFL() { return cornerWeightFL; }
     @JsonProperty("cornerWeightFL")
-    public void setCornerWeightFL(long value) { this.cornerWeightFL = value; }
+    public void setCornerWeightFL(double value) { this.cornerWeightFL = value; }
 
     @JsonProperty("cornerWeightFR")
-    public long getCornerWeightFR() { return cornerWeightFR; }
+    public double getCornerWeightFR() { return cornerWeightFR; }
     @JsonProperty("cornerWeightFR")
-    public void setCornerWeightFR(long value) { this.cornerWeightFR = value; }
+    public void setCornerWeightFR(double value) { this.cornerWeightFR = value; }
 
     @JsonProperty("cornerWeightRL")
-    public long getCornerWeightRL() { return cornerWeightRL; }
+    public double getCornerWeightRL() { return cornerWeightRL; }
     @JsonProperty("cornerWeightRL")
-    public void setCornerWeightRL(long value) { this.cornerWeightRL = value; }
+    public void setCornerWeightRL(double value) { this.cornerWeightRL = value; }
 
     @JsonProperty("cornerWeightRR")
-    public long getCornerWeightRR() { return cornerWeightRR; }
+    public double getCornerWeightRR() { return cornerWeightRR; }
     @JsonProperty("cornerWeightRR")
-    public void setCornerWeightRR(long value) { this.cornerWeightRR = value; }
+    public void setCornerWeightRR(double value) { this.cornerWeightRR = value; }
 
     @JsonProperty("frontAxleTireModel")
     public AxleTireModel getFrontAxleTireModel() { return frontAxleTireModel; }
@@ -76,4 +76,30 @@ public class RC {
     public AxleTireModel getRearAxleTireModel() { return rearAxleTireModel; }
     @JsonProperty("rearAxleTireModel")
     public void setRearAxleTireModel(AxleTireModel value) { this.rearAxleTireModel = value; }
+
+    public RaceCar toRaceCar()
+    {
+        RaceCar racecar = new RaceCar();
+
+        racecar.setName(this.getName());
+        racecar.setFrontTrack(this.getFrontTrack());
+        racecar.setRearTrack(this.getRearTrack());
+        racecar.setWheelbase(this.getWheelbase());
+        racecar.setCogHeight(this.getCogHeight());
+        racecar.setFrontRollDist(this.getFrontRollDist());
+        racecar.setCornerWeightFL(this.getCornerWeightFL());
+        racecar.setCornerWeightFR(this.getCornerWeightFR());
+        racecar.setCornerWeightRL(this.getCornerWeightRL());
+        racecar.setCornerWeightRR(this.getCornerWeightRR());
+
+        MagicFormulaTireModel frontAxle = new MagicFormulaTireModel(this.getFrontAxleTireModel().getSlipAngleCoefficientC(), this.getFrontAxleTireModel().getSlipAngleCoefficientB(), this.getFrontAxleTireModel().getSlipAngleCoefficientE(), this.getFrontAxleTireModel().getLoadCoefficientKA(), this.getFrontAxleTireModel().getLoadCoefficientKB());
+        frontAxle.setName(this.getFrontAxleTireModel().getName());
+
+        MagicFormulaTireModel rearAxle = new MagicFormulaTireModel(this.getRearAxleTireModel().getSlipAngleCoefficientC(), this.getRearAxleTireModel().getSlipAngleCoefficientB(), this.getRearAxleTireModel().getSlipAngleCoefficientE(), this.getRearAxleTireModel().getLoadCoefficientKA(), this.getRearAxleTireModel().getLoadCoefficientKB());
+        frontAxle.setName(this.getFrontAxleTireModel().getName());
+
+        racecar.setFrontAxleTireModel(frontAxle);
+        racecar.setRearAxleTireModel(rearAxle);
+        return racecar;
+    }
 }

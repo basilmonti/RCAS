@@ -5,12 +5,11 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TabPane;
+import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import main.java.rcas.model.AxleTireModel;
+import main.java.rcas.model.RC;
 import main.java.rcas.model.RaceCar;
 
 import java.util.ResourceBundle;
@@ -35,7 +34,6 @@ public class StartWindowViewController {
 	}
 
 	public void handleNewCarBtn(ActionEvent actionEvent) {
-	    //TODO Connect to RC Main Menu with default Values
 		try
 		{
 			stage = (Stage) mainPane.getScene().getWindow();
@@ -43,7 +41,15 @@ public class StartWindowViewController {
 			fxmlLoader.setLocation(getClass().getClassLoader().getResource("main/java/RCDetailView.fxml"));
 			ResourceBundle resourceBundle = ResourceBundle.getBundle("main/java/RCASResources");
 			fxmlLoader.setResources(resourceBundle);
-            RaceCar car = new RaceCar(0, 0, 0, 0);
+            RC car = new RC();
+            car.setName("RaceCar");
+            car.setFrontTrack(1.6);
+            car.setRearTrack(1.6);
+            car.setWheelbase(2.6);
+            car.setCogHeight(0.5);
+            car.setFrontRollDist(0.5);
+            car.setFrontAxleTireModel(new AxleTireModel());
+            car.setRearAxleTireModel(new AxleTireModel());
             RCDetailViewController controller = new RCDetailViewController(car);
             fxmlLoader.setController(controller);
 
@@ -63,12 +69,11 @@ public class StartWindowViewController {
 	}
 
 	public void handleOpenCarBtn(ActionEvent actionEvent) {
-	    //TODO set all Buttons invisible and create New for search. Search RC in JSON
         try
         {
             stage = (Stage) mainPane.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(StartWindowViewController.class.getResource("../../StartWindowViewOpen.fxml"));
+            fxmlLoader.setLocation(getClass().getClassLoader().getResource("main/java/StartWindowViewOpen.fxml"));
             ResourceBundle resourceBundle = ResourceBundle.getBundle("main/java/RCASResources");
             fxmlLoader.setResources(resourceBundle);
 
@@ -80,6 +85,8 @@ public class StartWindowViewController {
         }
         catch (Exception e)
         {
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, e.getMessage());
+            alert.show();
             e.printStackTrace();
         }
 	}
@@ -90,7 +97,7 @@ public class StartWindowViewController {
         {
             stage = (Stage) mainPane.getScene().getWindow();
             FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(StartWindowViewController.class.getResource("../../StartWindowViewRecent.fxml"));
+            fxmlLoader.setLocation(getClass().getClassLoader().getResource("main/java/StartWindowViewRecent.fxml"));
             ResourceBundle resourceBundle = ResourceBundle.getBundle("main/java/RCASResources");
             fxmlLoader.setResources(resourceBundle);
 

@@ -15,7 +15,7 @@ public class RCASMain extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		FXMLLoader fxmlLoader = new FXMLLoader();
-		fxmlLoader.setLocation(RCASMain.class.getResource("StartWindowView.fxml"));
+		fxmlLoader.setLocation(getClass().getClassLoader().getResource("main/java/StartWindowView.fxml"));
 		ResourceBundle resourceBundle = ResourceBundle.getBundle("main/java/RCASResources");
 		fxmlLoader.setResources(resourceBundle);
 

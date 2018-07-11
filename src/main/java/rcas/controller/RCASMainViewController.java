@@ -1,19 +1,22 @@
 package main.java.rcas.controller;
 
+import java.net.URL;
 import java.util.Iterator;
 import java.util.ResourceBundle;
 
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart.Series;
 import javafx.scene.layout.GridPane;
 import main.java.rcas.model.MagicFormulaTireModel;
+import main.java.rcas.model.RC;
 import main.java.rcas.model.RaceCar;
 import main.java.rcas.model.TireModel;
 import main.java.rcas.util.CorneringAnalyserUtil;
 
-public class RCASMainViewController {
+public class RCASMainViewController implements Initializable {
 
 	@FXML
 	private GridPane mainPane;
@@ -21,33 +24,21 @@ public class RCASMainViewController {
 	private LineChart<Number, Number> mainChart;
 	@FXML
 	private ResourceBundle resources;
+	private RC rc;
+
+	public RCASMainViewController(RC rc)
+	{
+		this.rc = rc;
+	}
 
 	@FXML
-	public void initialize() {
-		// create race cars and calculate a chart.
-		RaceCar myRaceCar_1 = new RaceCar(420, 420, 370, 370);
-		TireModel myTireModel_1 = new MagicFormulaTireModel();
-		myRaceCar_1.setFrontRollDist(0.55);
-		myRaceCar_1.setFrontAxleTireModel(myTireModel_1);
-		myRaceCar_1.setRearAxleTireModel(myTireModel_1);
-		myRaceCar_1.setName("Car STD (blue)");
+	public void initialize(URL location, ResourceBundle resources) {
 
-		RaceCar myRaceCar_2 = new RaceCar(420, 420, 370, 370);
-		TireModel myTireModel_2_Fr = new MagicFormulaTireModel(1.3, 15.2, -1.6, 1.6, 0.000075);
-		TireModel myTireModel_2_Rr = new MagicFormulaTireModel(1.3, 15.2, -1.6, 1.8, 0.000075);
-		myRaceCar_2.setFrontRollDist(0.55);
-		myRaceCar_2.setFrontAxleTireModel(myTireModel_2_Fr);
-		myRaceCar_2.setRearAxleTireModel(myTireModel_2_Rr);
-		myRaceCar_2.setName("Car MOD (red)");
-
+		RaceCar myRaceCar_1 = rc.toRaceCar();
 		CorneringAnalyserUtil corneringUtil = new CorneringAnalyserUtil();
 
-		// show what the toString() methods print out.
-		System.out.println(myRaceCar_1.toString());
-		System.out.println(myRaceCar_2.toString());
 		// show balance, grip, control and stability values of the cars.
 		this.printRaceCarCorneringValues(myRaceCar_1, corneringUtil);
-		this.printRaceCarCorneringValues(myRaceCar_2, corneringUtil);
 
 		ObservableList<Series<Number, Number>> dataList_1 = corneringUtil.generateMMMChartData(myRaceCar_1);
 		mainChart.getData().addAll(dataList_1);
@@ -56,9 +47,6 @@ public class RCASMainViewController {
 		// NullPointerException.
 		this.setSeriesStyle(dataList_1, ".chart-series-line", "-fx-stroke: blue; -fx-stroke-width: 1px;");
 
-		ObservableList<Series<Number, Number>> dataList_2 = corneringUtil.generateMMMChartData(myRaceCar_2);
-		mainChart.getData().addAll(dataList_2);
-		this.setSeriesStyle(dataList_2, ".chart-series-line", "-fx-stroke: red; -fx-stroke-width: 1px;");
 	}
 
 	private void setSeriesStyle(ObservableList<Series<Number, Number>> dataList_1, String styleSelector,
