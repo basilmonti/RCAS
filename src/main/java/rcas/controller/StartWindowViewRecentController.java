@@ -10,6 +10,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import main.java.rcas.model.Converter;
@@ -100,4 +101,22 @@ public class StartWindowViewRecentController {
 	{
 		return new ArrayList<>(Arrays.asList(rcs));
 	}
+
+    public void onClicklbl(MouseEvent mouseEvent) {
+		try {
+			stage = (Stage) mainPane.getScene().getWindow();
+			FXMLLoader fxmlLoader = new FXMLLoader();
+			fxmlLoader.setLocation(getClass().getClassLoader().getResource("main/java/StartWindowView.fxml"));
+			ResourceBundle resourceBundle = ResourceBundle.getBundle("main/java/RCASResources");
+			fxmlLoader.setResources(resourceBundle);
+
+			Parent root = fxmlLoader.load();
+
+			stage.setScene(new Scene(root));
+			stage.show();
+		}catch (Exception e)
+		{
+
+		}
+    }
 }

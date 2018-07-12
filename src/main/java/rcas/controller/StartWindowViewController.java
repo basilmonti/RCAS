@@ -6,6 +6,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 import main.java.rcas.model.AxleTireModel;
@@ -112,4 +113,22 @@ public class StartWindowViewController {
             e.printStackTrace();
         }
 	}
+
+    public void onClicklbl(MouseEvent mouseEvent) {
+	    try {
+            stage = (Stage) mainPane.getScene().getWindow();
+            FXMLLoader fxmlLoader = new FXMLLoader();
+            fxmlLoader.setLocation(getClass().getClassLoader().getResource("main/java/StartWindowView.fxml"));
+            ResourceBundle resourceBundle = ResourceBundle.getBundle("main/java/RCASResources");
+            fxmlLoader.setResources(resourceBundle);
+
+            Parent root = fxmlLoader.load();
+
+            stage.setScene(new Scene(root));
+            stage.show();
+        }catch (Exception e)
+        {
+
+        }
+    }
 }

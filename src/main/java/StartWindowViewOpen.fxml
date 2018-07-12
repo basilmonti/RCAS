@@ -32,7 +32,7 @@
     </rowConstraints>
     <children>
         <Label alignment="BOTTOM_CENTER" text="RCAS" textAlignment="CENTER" GridPane.columnIndex="1"
-               GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="BOTTOM">
+               GridPane.halignment="CENTER" GridPane.rowIndex="0" GridPane.valignment="BOTTOM" onMouseClicked="#onClicklbl">
             <font>
                 <Font name="Hiragino Sans W5" size="55.0"/>
             </font>

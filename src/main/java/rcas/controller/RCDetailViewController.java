@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
+import jdk.nashorn.internal.runtime.ECMAException;
 import main.java.rcas.model.Converter;
 import main.java.rcas.model.Member;
 import main.java.rcas.model.RC;
@@ -142,7 +143,6 @@ public class RCDetailViewController implements Initializable{
 
 
 	public void btnMMMonClick(ActionEvent actionEvent) {
-		//TODO Create SubWindow unmodular with MMMDiagramm
 		try
 		{
 			stage = new Stage();
@@ -166,44 +166,143 @@ public class RCDetailViewController implements Initializable{
 	}
 
 	public void btnDeleteonClick(ActionEvent actionEvent) {
-		//TODO Delete Car in JSON and go to Main Menu
+		String json;
+		Member data;
+		try
+		{
+			json = readAllBytesJava7("C:\\Users\\bmontemitro\\Documents\\RCAS\\src\\main\\java\\rcas.json");
+			data = Converter.fromJsonString(json);
+		}catch (Exception e)
+		{
+			data = null;
+		}
+		List<RC> carlist = new ArrayList<>(Arrays.asList(data.getRC()));
+		for (RC car: carlist) {
+			if(car.getName().equals(rc.getName()))
+			{
+				carlist.remove(car);
+				break;
+			}
+		}
+		RC[] rcs = new RC[carlist.size()];
+		rcs = carlist.toArray(rcs);
+		data.setRC(rcs);
+		try {
+			writeAllBytesJava7("C:\\Users\\bmontemitro\\Documents\\RCAS\\src\\main\\java\\rcas.json", Converter.toJsonString(data));
+		}catch (Exception e)
+		{
+			e.printStackTrace();
+		}
+		try {
+			stage = (Stage) tabRCMain.getScene().getWindow();
+			FXMLLoader fxmlLoader = new FXMLLoader();
+			fxmlLoader.setLocation(getClass().getClassLoader().getResource("main/java/StartWindowView.fxml"));
+			ResourceBundle resourceBundle = ResourceBundle.getBundle("main/java/RCASResources");
+			fxmlLoader.setResources(resourceBundle);
+
+			Parent root = fxmlLoader.load();
+
+			stage.setScene(new Scene(root));
+			stage.show();
+		}catch(Exception e)
+		{
+			e.printStackTrace();
+		}
 	}
 
 	public void btnUndoonClick(ActionEvent actionEvent) {
 		//TODO Reload the controls from JSON Data
+		String json;
+		Member data;
+		try
+		{
+			json = readAllBytesJava7("C:\\Users\\bmontemitro\\Documents\\RCAS\\src\\main\\java\\rcas.json");
+			data = Converter.fromJsonString(json);
+		}catch (Exception e)
+		{
+			data = null;
+		}
+		List<RC> carlist = new ArrayList<>(Arrays.asList(data.getRC()));
+		for (RC car: carlist) {
+			if(car.getName().equals(rc.getName()))
+			{
+				txtNameName.setText(car.getName());
+				txtNameBasicData1.setText(String.valueOf(car.getFrontTrack()));
+				txtNameBasicData2.setText(String.valueOf(car.getRearTrack()));
+				txtNameBasicData3.setText(String.valueOf(car.getWheelbase()));
+				txtNameBasicData4.setText(String.valueOf(car.getCogHeight()));
+				txtNameBasicData5.setText(String.valueOf(car.getFrontRollDist()));
+
+				//Corner Weight
+				if(rc.getCornerWeightFL() > 0.0){txtNameCornerWeight1.setText(String.valueOf(car.getCornerWeightFL()));}
+				if(rc.getCornerWeightFR() > 0.0){txtNameCornerWeight2.setText(String.valueOf(car.getCornerWeightFR()));}
+				if(rc.getCornerWeightRL() > 0.0){txtNameCornerWeight3.setText(String.valueOf(car.getCornerWeightRL()));}
+				if(rc.getCornerWeightRR() > 0.0){txtNameCornerWeight4.setText(String.valueOf(car.getCornerWeightRR()));}
+
+				//Tire Data
+				if(!Objects.equals(car.getFrontAxleTireModel().getName(), "")){txtNameTireName.setText(car.getFrontAxleTireModel().getName());}
+				if(rc.getFrontAxleTireModel().getSlipAngleCoefficientC() > 0.0){txtNameTireData1.setText(String.valueOf(car.getFrontAxleTireModel().getSlipAngleCoefficientC()));}
+				if(rc.getFrontAxleTireModel().getSlipAngleCoefficientB() > 0.0){txtNameTireData2.setText(String.valueOf(car.getFrontAxleTireModel().getSlipAngleCoefficientB()));}
+				if(rc.getFrontAxleTireModel().getSlipAngleCoefficientE() > 0.0){txtNameTireData3.setText(String.valueOf(car.getFrontAxleTireModel().getSlipAngleCoefficientE()));}
+				if(rc.getFrontAxleTireModel().getLoadCoefficientKA() > 0.0){txtNameTireData4.setText(String.valueOf(car.getFrontAxleTireModel().getLoadCoefficientKA()));}
+				if(rc.getFrontAxleTireModel().getLoadCoefficientKB() > 0.0){txtNameTireData5.setText(String.valueOf(car.getFrontAxleTireModel().getLoadCoefficientKB()));}
+
+				if(!Objects.equals(car.getRearAxleTireModel().getName(), "")){txtNameRearTireName.setText(car.getRearAxleTireModel().getName());}
+				if(rc.getRearAxleTireModel().getSlipAngleCoefficientC() > 0.0){txtNameRearTireData1.setText(String.valueOf(car.getRearAxleTireModel().getSlipAngleCoefficientC()));}
+				if(rc.getRearAxleTireModel().getSlipAngleCoefficientB() > 0.0){txtNameRearTireData2.setText(String.valueOf(car.getRearAxleTireModel().getSlipAngleCoefficientB()));}
+				if(rc.getRearAxleTireModel().getSlipAngleCoefficientE() > 0.0){txtNameRearTireData3.setText(String.valueOf(car.getRearAxleTireModel().getSlipAngleCoefficientE()));}
+				if(rc.getRearAxleTireModel().getLoadCoefficientKA() > 0.0){txtNameRearTireData4.setText(String.valueOf(car.getRearAxleTireModel().getLoadCoefficientKA()));}
+				if(rc.getRearAxleTireModel().getLoadCoefficientKB() > 0.0){txtNameRearTireData5.setText(String.valueOf(car.getRearAxleTireModel().getLoadCoefficientKB()));}
+				break;
+			}
+		}
+		RC[] rcs = new RC[carlist.size()];
+		rcs = carlist.toArray(rcs);
+		data.setRC(rcs);
+		try {
+			writeAllBytesJava7("C:\\Users\\bmontemitro\\Documents\\RCAS\\src\\main\\java\\rcas.json", Converter.toJsonString(data));
+		}catch (Exception e)
+		{
+			e.printStackTrace();
+		}
 	}
 
 	public void btnSaveonClick(ActionEvent actionEvent) {
-		//TODO Post Data to JSON
-		rc.setName(txtNameName.getText());
-		rc.setFrontTrack(Double.valueOf(txtNameBasicData1.getText()));
-		rc.setRearTrack(Double.valueOf(txtNameBasicData2.getText()));
-		rc.setWheelbase(Double.valueOf(txtNameBasicData3.getText()));
-		rc.setCogHeight(Double.valueOf(txtNameBasicData4.getText()));
-		rc.setFrontRollDist(Double.valueOf(txtNameBasicData5.getText()));
+		try {
+			rc.setName(txtNameName.getText());
+			rc.setFrontTrack(Double.valueOf(txtNameBasicData1.getText()));
+			rc.setRearTrack(Double.valueOf(txtNameBasicData2.getText()));
+			rc.setWheelbase(Double.valueOf(txtNameBasicData3.getText()));
+			rc.setCogHeight(Double.valueOf(txtNameBasicData4.getText()));
+			rc.setFrontRollDist(Double.valueOf(txtNameBasicData5.getText()));
 
-		rc.setCornerWeightFL(Double.valueOf(txtNameCornerWeight1.getText()));
-		rc.setCornerWeightFR(Double.valueOf(txtNameCornerWeight2.getText()));
-		rc.setCornerWeightRL(Double.valueOf(txtNameCornerWeight3.getText()));
-		rc.setCornerWeightRR(Double.valueOf(txtNameCornerWeight4.getText()));
+			rc.setCornerWeightFL(Double.valueOf(txtNameCornerWeight1.getText()));
+			rc.setCornerWeightFR(Double.valueOf(txtNameCornerWeight2.getText()));
+			rc.setCornerWeightRL(Double.valueOf(txtNameCornerWeight3.getText()));
+			rc.setCornerWeightRR(Double.valueOf(txtNameCornerWeight4.getText()));
 
-		rc.getFrontAxleTireModel().setName(txtNameTireName.getText());
-		rc.getFrontAxleTireModel().setSlipAngleCoefficientC(Double.valueOf(txtNameTireData1.getText()));
-		rc.getFrontAxleTireModel().setSlipAngleCoefficientB(Double.valueOf(txtNameTireData2.getText()));
-		rc.getFrontAxleTireModel().setSlipAngleCoefficientE(Double.valueOf(txtNameTireData3.getText()));
-		rc.getFrontAxleTireModel().setLoadCoefficientKA(Double.valueOf(txtNameTireData4.getText()));
-		rc.getFrontAxleTireModel().setLoadCoefficientKB(Double.valueOf(txtNameTireData5.getText()));
+			rc.getFrontAxleTireModel().setName(txtNameTireName.getText());
+			rc.getFrontAxleTireModel().setSlipAngleCoefficientC(Double.valueOf(txtNameTireData1.getText()));
+			rc.getFrontAxleTireModel().setSlipAngleCoefficientB(Double.valueOf(txtNameTireData2.getText()));
+			rc.getFrontAxleTireModel().setSlipAngleCoefficientE(Double.valueOf(txtNameTireData3.getText()));
+			rc.getFrontAxleTireModel().setLoadCoefficientKA(Double.valueOf(txtNameTireData4.getText()));
+			rc.getFrontAxleTireModel().setLoadCoefficientKB(Double.valueOf(txtNameTireData5.getText()));
 
-		rc.getRearAxleTireModel().setName(txtNameRearTireName.getText());
-		rc.getRearAxleTireModel().setSlipAngleCoefficientC(Double.valueOf(txtNameRearTireData1.getText()));
-		rc.getRearAxleTireModel().setSlipAngleCoefficientB(Double.valueOf(txtNameRearTireData2.getText()));
-		rc.getRearAxleTireModel().setSlipAngleCoefficientE(Double.valueOf(txtNameRearTireData3.getText()));
-		rc.getRearAxleTireModel().setLoadCoefficientKA(Double.valueOf(txtNameRearTireData4.getText()));
-		rc.getRearAxleTireModel().setLoadCoefficientKB(Double.valueOf(txtNameRearTireData5.getText()));
+			rc.getRearAxleTireModel().setName(txtNameRearTireName.getText());
+			rc.getRearAxleTireModel().setSlipAngleCoefficientC(Double.valueOf(txtNameRearTireData1.getText()));
+			rc.getRearAxleTireModel().setSlipAngleCoefficientB(Double.valueOf(txtNameRearTireData2.getText()));
+			rc.getRearAxleTireModel().setSlipAngleCoefficientE(Double.valueOf(txtNameRearTireData3.getText()));
+			rc.getRearAxleTireModel().setLoadCoefficientKA(Double.valueOf(txtNameRearTireData4.getText()));
+			rc.getRearAxleTireModel().setLoadCoefficientKB(Double.valueOf(txtNameRearTireData5.getText()));
 
-		saveRCtoJSON(rc);
-		Alert alert = new Alert(Alert.AlertType.INFORMATION, "Saved!");
-		alert.show();
+			saveRCtoJSON(rc);
+			Alert alert = new Alert(Alert.AlertType.INFORMATION, "Saved!");
+			alert.show();
+		}catch (Exception e)
+		{
+			Alert alert = new Alert(Alert.AlertType.ERROR, "Ein Feld wurde leer gelassen oder ein Feld entspricht nicht dem Wertebereich");
+			alert.show();
+		}
 	}
 	public void saveRCtoJSON(RC rccar)
 	{
@@ -263,5 +362,38 @@ public class RCDetailViewController implements Initializable{
 		{
 
 		}
+	}
+	private double string2double(String value, String key) throws Exception
+	{
+		try {
+			return validateValue(Double.valueOf(value), key);
+		}catch (Exception e)
+		{
+			Alert alert = new Alert(Alert.AlertType.ERROR, "Feld: " + key + " ist ausserhalb des Wertebereichs! Versuche es nochmal");
+			alert.show();
+			throw new Exception();
+		}
+	}
+	private double validateValue (double value, String key) throws Exception {
+		double returnValue = 0;
+		switch (key)
+		{
+			case "frontTrack": if(value < 2.2 && 1.2 < value){returnValue = value;break;}else{throw new Exception();}
+			case "rearTrack": if(value < 2.2 && 1.2 < value){returnValue = value;}else{throw new Exception();}
+			case "wheelbase": if(value < 5.1 && 1.4 < value){returnValue = value;}else{throw new Exception();}
+			case "cogHeight": if(value < 1.3 && 0.0 < value){returnValue = value;}else{throw new Exception();}
+			case "frontRollDist": if(value < 0.9 && 0.1 < value){returnValue = value;}else{throw new Exception();}
+			case "cornerWeightFL": if(value < 1201 && 99 < value){returnValue = value;}else{throw new Exception();}
+			case "cornerWeightFR": if(value < 1201 && 1.2 < value){returnValue = value;}else{throw new Exception();}
+			case "cornerWeightRL": if(value < 1201 && 1.2 < value){returnValue = value;}else{throw new Exception();}
+			case "cornerWeightRR": if(value < 1201 && 1.2 < value){returnValue = value;}else{throw new Exception();}
+			case "slipAngleCoefficientC": if(value < 2.3 && 1.2 < value){returnValue = value;}else{throw new Exception();}
+			case "slipAngleCoefficientB": if(value < 2.3 && 1.2 < value){returnValue = value;}else{throw new Exception();}
+			case "slipAngleCoefficientE": if(value < 2.3 && 1.2 < value){returnValue = value;}else{throw new Exception();}
+			case "loadCoefficientKA": if(value < 2.3 && 1.2 < value){returnValue = value;}else{throw new Exception();}
+			case "loadCoefficientKB": if(value < 2.3 && 1.2 < value){returnValue = value;}else{throw new Exception();}
+			default: break;
+		}
+		return returnValue;
 	}
 }
