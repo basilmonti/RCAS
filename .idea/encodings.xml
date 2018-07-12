@@ -3,6 +3,6 @@
   <component name="Encoding">
     <file url="file://$PROJECT_DIR$/src/main/java/rcas/model/MagicFormulaTireModel.java" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/src/main/java/rcas/model/TireModel.java" charset="ISO-8859-1" />
-    <file url="file://$PROJECT_DIR$/src/main/java/rcas/util/CorneringAnalyserUtil.java" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/src/main/java/rcas/util/CorneringAnalyserUtil.java" charset="UTF-8" />
   </component>
 </project>

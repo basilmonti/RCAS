@@ -12,7 +12,7 @@
 <?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<TabPane fx:id="tabRCMain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@RCASStyle.css" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1">
+<TabPane fx:id="tabRCMain" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" stylesheets="@RCASStyle.css" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1">
     <padding>
         <Insets bottom="5.0" left="15.0" right="15.0" top="5.0" />
     </padding>
@@ -32,7 +32,7 @@
                     </padding>
                 </Label>
                 <Label text="Name: " GridPane.columnIndex="0" GridPane.rowIndex="2" />
-                <TextField fx:id="txtNameName" alignment="CENTER_RIGHT" promptText="m" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <TextField fx:id="txtNameName" alignment="CENTER_RIGHT" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                 <Line endX="145.0" startX="-100.0" GridPane.rowIndex="1" />
                 <Label text="Front Track: " GridPane.columnIndex="0" GridPane.rowIndex="3">
                     <GridPane.margin>
@@ -79,11 +79,11 @@
                 <RowConstraints prefHeight="35.0" />
                 <RowConstraints prefHeight="35.0" />
                 <RowConstraints minHeight="10.0" prefHeight="35.0" />
+                <RowConstraints prefHeight="35.0" />
                 <RowConstraints />
                 <RowConstraints />
                 <RowConstraints />
-                <RowConstraints />
-                <RowConstraints prefHeight="90.0" valignment="BOTTOM" />
+                <RowConstraints prefHeight="55.0" valignment="BOTTOM" />
                 <RowConstraints />
             </rowConstraints>
             <opaqueInsets>
@@ -254,11 +254,11 @@
                 <RowConstraints prefHeight="35.0" />
                 <RowConstraints prefHeight="35.0" />
                 <RowConstraints minHeight="10.0" prefHeight="35.0" />
+                <RowConstraints prefHeight="35.0" />
                 <RowConstraints />
                 <RowConstraints />
                 <RowConstraints />
-                <RowConstraints />
-                <RowConstraints prefHeight="90.0" valignment="BOTTOM" />
+                <RowConstraints prefHeight="55.0" valignment="BOTTOM" />
                 <RowConstraints />
             </rowConstraints>
             <opaqueInsets>
@@ -328,11 +328,11 @@
                 <RowConstraints prefHeight="35.0" />
                 <RowConstraints prefHeight="35.0" />
                 <RowConstraints minHeight="10.0" prefHeight="35.0" />
+                <RowConstraints prefHeight="35.0" />
                 <RowConstraints />
                 <RowConstraints />
                 <RowConstraints />
-                <RowConstraints />
-                <RowConstraints prefHeight="90.0" valignment="BOTTOM" />
+                <RowConstraints prefHeight="55.0" valignment="BOTTOM" />
                 <RowConstraints />
             </rowConstraints>
             <opaqueInsets>
