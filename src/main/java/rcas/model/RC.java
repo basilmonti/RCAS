@@ -24,7 +24,7 @@ public class RC {
     @JsonProperty("frontTrack")
     public double getFrontTrack() { return frontTrack; }
     @JsonProperty("frontTrack")
-    public void setFrontTrack(double value) { this.frontTrack = value; }
+    public void setFrontTrack(double value) { this.frontTrack = value;}
 
     @JsonProperty("rearTrack")
     public double getRearTrack() { return rearTrack; }

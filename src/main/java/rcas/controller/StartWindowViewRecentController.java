@@ -35,18 +35,26 @@ public class StartWindowViewRecentController {
     @FXML
     private Stage stage;
     private RC car;
+    private RC[] rcs;
 
 	@FXML
 	public void initialize() {
 		String json = readAllBytesJava7("D:\\Dokumente\\TBZ Module\\M120\\RaceCarAnalysisStudio_V_1_0\\RaceCarAnalysisStudio\\src\\main\\java\\rcas.json");
 		Member data = new Member();
+		List<String> names = new ArrayList<>();
+
 		try {
 			data = Converter.fromJsonString(json);
 		}catch (Exception e)
 		{
 
 		}
-		ObservableList items = FXCollections.observableArrayList(getCarList(data.getRC()));
+		rcs = data.getRC();
+		for (RC rc: getCarList(data.getRC())){
+			names.add(rc.getName());
+		}
+		ObservableList items = FXCollections.observableArrayList(names);
+
 		listViewRecent.setItems(items);
 	}
 
@@ -56,7 +64,7 @@ public class StartWindowViewRecentController {
 		{
 			if(listViewRecent.getSelectionModel().getSelectedItem() != null)
 			{
-				car = (RC)listViewRecent.getSelectionModel().getSelectedItem();
+				car = searchRC(getCarList(rcs), (String) listViewRecent.getSelectionModel().getSelectedItem());
 			}
 			else
 			{
@@ -119,4 +127,15 @@ public class StartWindowViewRecentController {
 
 		}
     }
+	private RC searchRC(List<RC> carlist, String carname)
+	{
+		for(RC car : carlist)
+		{
+			if(Objects.equals(car.getName(), carname))
+			{
+				return car;
+			}
+		}
+		return null;
+	}
 }
