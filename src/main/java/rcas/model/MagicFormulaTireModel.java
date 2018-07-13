@@ -1,4 +1,4 @@
-package main.java.rcas.model;
+package rcas.model;
 
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -20,7 +20,7 @@ import javafx.beans.property.SimpleStringProperty;
  * @author suy
  *
  */
-public class MagicFormulaTireModel implements TireModel {
+public class MagicFormulaTireModel implements rcas.model.TireModel {
 
 	private static String DEFAULT_NAME = "Magic Formula Tire Model";
 	private static double DEFAULT_COEFF_C = 1.3;

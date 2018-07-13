@@ -1,4 +1,4 @@
-package main.java.rcas.model;
+package rcas.model;
 
 /**
  * This interface defines the methods to be supported in a class representing

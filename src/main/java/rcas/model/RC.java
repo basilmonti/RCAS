@@ -1,7 +1,6 @@
-package main.java.rcas.model;
+package rcas.model;
 
-import java.util.Map;
-import com.fasterxml.jackson.annotation.*;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class RC {
     private String name;
@@ -14,8 +13,8 @@ public class RC {
     private double cornerWeightFR;
     private double cornerWeightRL;
     private double cornerWeightRR;
-    private AxleTireModel frontAxleTireModel;
-    private AxleTireModel rearAxleTireModel;
+    private rcas.model.AxleTireModel frontAxleTireModel;
+    private rcas.model.AxleTireModel rearAxleTireModel;
 
     @JsonProperty("name")
     public String getName() { return name; }
@@ -68,18 +67,18 @@ public class RC {
     public void setCornerWeightRR(double value) { this.cornerWeightRR = value; }
 
     @JsonProperty("frontAxleTireModel")
-    public AxleTireModel getFrontAxleTireModel() { return frontAxleTireModel; }
+    public rcas.model.AxleTireModel getFrontAxleTireModel() { return frontAxleTireModel; }
     @JsonProperty("frontAxleTireModel")
-    public void setFrontAxleTireModel(AxleTireModel value) { this.frontAxleTireModel = value; }
+    public void setFrontAxleTireModel(rcas.model.AxleTireModel value) { this.frontAxleTireModel = value; }
 
     @JsonProperty("rearAxleTireModel")
-    public AxleTireModel getRearAxleTireModel() { return rearAxleTireModel; }
+    public rcas.model.AxleTireModel getRearAxleTireModel() { return rearAxleTireModel; }
     @JsonProperty("rearAxleTireModel")
-    public void setRearAxleTireModel(AxleTireModel value) { this.rearAxleTireModel = value; }
+    public void setRearAxleTireModel(rcas.model.AxleTireModel value) { this.rearAxleTireModel = value; }
 
-    public RaceCar toRaceCar()
+    public rcas.model.RaceCar toRaceCar()
     {
-        RaceCar racecar = new RaceCar();
+        rcas.model.RaceCar racecar = new rcas.model.RaceCar();
 
         racecar.setName(this.getName());
         racecar.setFrontTrack(this.getFrontTrack());
@@ -92,10 +91,10 @@ public class RC {
         racecar.setCornerWeightRL(this.getCornerWeightRL());
         racecar.setCornerWeightRR(this.getCornerWeightRR());
 
-        MagicFormulaTireModel frontAxle = new MagicFormulaTireModel(this.getFrontAxleTireModel().getSlipAngleCoefficientC(), this.getFrontAxleTireModel().getSlipAngleCoefficientB(), this.getFrontAxleTireModel().getSlipAngleCoefficientE(), this.getFrontAxleTireModel().getLoadCoefficientKA(), this.getFrontAxleTireModel().getLoadCoefficientKB());
+        rcas.model.MagicFormulaTireModel frontAxle = new rcas.model.MagicFormulaTireModel(this.getFrontAxleTireModel().getSlipAngleCoefficientC(), this.getFrontAxleTireModel().getSlipAngleCoefficientB(), this.getFrontAxleTireModel().getSlipAngleCoefficientE(), this.getFrontAxleTireModel().getLoadCoefficientKA(), this.getFrontAxleTireModel().getLoadCoefficientKB());
         frontAxle.setName(this.getFrontAxleTireModel().getName());
 
-        MagicFormulaTireModel rearAxle = new MagicFormulaTireModel(this.getRearAxleTireModel().getSlipAngleCoefficientC(), this.getRearAxleTireModel().getSlipAngleCoefficientB(), this.getRearAxleTireModel().getSlipAngleCoefficientE(), this.getRearAxleTireModel().getLoadCoefficientKA(), this.getRearAxleTireModel().getLoadCoefficientKB());
+        rcas.model.MagicFormulaTireModel rearAxle = new rcas.model.MagicFormulaTireModel(this.getRearAxleTireModel().getSlipAngleCoefficientC(), this.getRearAxleTireModel().getSlipAngleCoefficientB(), this.getRearAxleTireModel().getSlipAngleCoefficientE(), this.getRearAxleTireModel().getLoadCoefficientKA(), this.getRearAxleTireModel().getLoadCoefficientKB());
         frontAxle.setName(this.getFrontAxleTireModel().getName());
 
         racecar.setFrontAxleTireModel(frontAxle);

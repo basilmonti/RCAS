@@ -1,4 +1,4 @@
-package main.java.rcas.controller;
+package rcas.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -6,14 +6,15 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Button;
+import javafx.scene.control.TabPane;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
-import jdk.nashorn.internal.runtime.ECMAException;
-import main.java.rcas.model.Converter;
-import main.java.rcas.model.Member;
-import main.java.rcas.model.RC;
-import main.java.rcas.model.RaceCar;
+import rcas.model.Converter;
+import rcas.model.Member;
+import rcas.model.RC;
 
 import java.io.FileOutputStream;
 import java.io.IOException;

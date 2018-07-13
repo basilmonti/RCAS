@@ -1,10 +1,10 @@
-package main.java.rcas.util;
+package rcas.util;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.chart.XYChart.Data;
 import javafx.scene.chart.XYChart.Series;
-import main.java.rcas.model.RaceCar;
+import rcas.model.RaceCar;
 
 /**
  * Utility Class for the analysis of the cornering capabilities of a RaceCar

@@ -1,4 +1,4 @@
-package main.java.rcas.controller;
+package rcas.controller;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -13,9 +13,9 @@ import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
-import main.java.rcas.model.Converter;
-import main.java.rcas.model.Member;
-import main.java.rcas.model.RC;
+import rcas.model.Converter;
+import rcas.model.Member;
+import rcas.model.RC;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -38,7 +38,7 @@ public class StartWindowViewRecentController {
 
 	@FXML
 	public void initialize() {
-		String json = readAllBytesJava7("C:\\Users\\bmontemitro\\Documents\\RCAS\\src\\main\\java\\rcas.json");
+		String json = readAllBytesJava7("D:\\Dokumente\\TBZ Module\\M120\\RaceCarAnalysisStudio_V_1_0\\RaceCarAnalysisStudio\\src\\main\\java\\rcas.json");
 		Member data = new Member();
 		try {
 			data = Converter.fromJsonString(json);

@@ -1,8 +1,4 @@
-package main.java.rcas.controller;
-
-import java.net.URL;
-import java.util.Iterator;
-import java.util.ResourceBundle;
+package rcas.controller;
 
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -10,11 +6,13 @@ import javafx.fxml.Initializable;
 import javafx.scene.chart.LineChart;
 import javafx.scene.chart.XYChart.Series;
 import javafx.scene.layout.GridPane;
-import main.java.rcas.model.MagicFormulaTireModel;
-import main.java.rcas.model.RC;
-import main.java.rcas.model.RaceCar;
-import main.java.rcas.model.TireModel;
-import main.java.rcas.util.CorneringAnalyserUtil;
+import rcas.model.RC;
+import rcas.model.RaceCar;
+import rcas.util.CorneringAnalyserUtil;
+
+import java.net.URL;
+import java.util.Iterator;
+import java.util.ResourceBundle;
 
 public class RCASMainViewController implements Initializable {
 

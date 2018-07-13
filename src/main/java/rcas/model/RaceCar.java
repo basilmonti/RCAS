@@ -1,4 +1,4 @@
-package main.java.rcas.model;
+package rcas.model;
 
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.SimpleDoubleProperty;
@@ -50,10 +50,10 @@ public class RaceCar {
 	private SimpleDoubleProperty cornerWeightRR;
 
 	// front axle tire model of the car.
-	private TireModel frontAxleTireModel;
+	private rcas.model.TireModel frontAxleTireModel;
 
 	// rear axle tire model of the car.
-	private TireModel rearAxleTireModel;
+	private rcas.model.TireModel rearAxleTireModel;
 
 	/**
 	 * Creates a new Race Car Object with the given corner weights in kg and the
@@ -82,8 +82,8 @@ public class RaceCar {
 		this.cornerWeightRR = new SimpleDoubleProperty(cornerWeightRR);
 
 		// initialize tire models with a default tire model.
-		this.frontAxleTireModel = new MagicFormulaTireModel();
-		this.rearAxleTireModel = new MagicFormulaTireModel();
+		this.frontAxleTireModel = new rcas.model.MagicFormulaTireModel();
+		this.rearAxleTireModel = new rcas.model.MagicFormulaTireModel();
 	}
 	public RaceCar() {
 		this.cornerWeightFL = new SimpleDoubleProperty(0);
@@ -92,8 +92,8 @@ public class RaceCar {
 		this.cornerWeightRR = new SimpleDoubleProperty(0);
 
 		// initialize tire models with a default tire model.
-		this.frontAxleTireModel = new MagicFormulaTireModel();
-		this.rearAxleTireModel = new MagicFormulaTireModel();
+		this.frontAxleTireModel = new rcas.model.MagicFormulaTireModel();
+		this.rearAxleTireModel = new rcas.model.MagicFormulaTireModel();
 	}
 
 	/**
@@ -323,7 +323,7 @@ public class RaceCar {
 	/**
 	 * @return the frontAxleTireModel
 	 */
-	public TireModel getFrontAxleTireModel() {
+	public rcas.model.TireModel getFrontAxleTireModel() {
 		return frontAxleTireModel;
 	}
 
@@ -331,14 +331,14 @@ public class RaceCar {
 	 * @param frontAxleTireModel
 	 *            the frontAxleTireModel to set
 	 */
-	public void setFrontAxleTireModel(TireModel frontAxleTireModel) {
+	public void setFrontAxleTireModel(rcas.model.TireModel frontAxleTireModel) {
 		this.frontAxleTireModel = frontAxleTireModel;
 	}
 
 	/**
 	 * @return the rearAxleTireModel
 	 */
-	public TireModel getRearAxleTireModel() {
+	public rcas.model.TireModel getRearAxleTireModel() {
 		return rearAxleTireModel;
 	}
 
@@ -346,7 +346,7 @@ public class RaceCar {
 	 * @param rearAxleTireModel
 	 *            the rearAxleTireModel to set
 	 */
-	public void setRearAxleTireModel(TireModel rearAxleTireModel) {
+	public void setRearAxleTireModel(rcas.model.TireModel rearAxleTireModel) {
 		this.rearAxleTireModel = rearAxleTireModel;
 	}
 
